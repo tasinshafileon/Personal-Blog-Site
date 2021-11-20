@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background: #CEE5D0;
+  position: absolute;
+  bottom: 0;
+}
+
+p {
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.header {
+  padding: 2rem 10rem;
+  background: #FFF3E4;
+  display: flex;
+  align-items: center;
+}
+
+.header-title h3 {
+  font-size: 4rem;
+  color: #483434;
+  letter-spacing: 2px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.item-container {
+  margin-top: 10px;
+}
+
+.navbar-item-element {
+  letter-spacing: 2px;
+  padding: 0 15px;
+  text-decoration: none;
+  color: #483434;
+}
+
+.navbar-item-element:hover {
+  color: #EED6C4;
+}
+
+.content-holder{
+  padding: 2rem 10rem 8rem 10rem;
+}
+
+.content-holder h1{
+  margin: 20px 0;
+  font-size: 2.5rem;
+}
+
+.content-holder p{
+  display: inline;
+}
+
+.content-holder a{
+  text-decoration: none;
+}
+
+.content-holder a:hover{
+  color: purple;
+  text-decoration: underline;
+}
