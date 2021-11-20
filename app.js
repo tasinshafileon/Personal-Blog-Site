@@ -9,19 +9,7 @@ const aboutStartingContent = "Greetings! I am Tasin Shafi Leon, a developer who 
 
 const contactStartingContent = "Hey there! In order to contact me you can mail me at ";
 
-const pageItems = [{
-  title: "Day 1",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat ante ut massa pretium, at suscipit nibh sodales. Duis sed lacinia lacus, in pulvinar ante. Etiam facilisis semper semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse velit mauris, imperdiet eget nunc a, lobortis luctus massa. Proin nec augue vel orci sollicitudin gravida. Quisque felis ligula, suscipit at tellus at, porttitor dictum libero. Quisque sollicitudin sodales odio ac pharetra. Quisque auctor erat ut finibus rhoncus. In gravida malesuada lacus, id finibus urna consectetur a."
-}, {
-  title: "Day 2",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat ante ut massa pretium, at suscipit nibh sodales. Duis sed lacinia lacus, in pulvinar ante. Etiam facilisis semper semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse velit mauris, imperdiet eget nunc a, lobortis luctus massa. Proin nec augue vel orci sollicitudin gravida. Quisque felis ligula, suscipit at tellus at, porttitor dictum libero. Quisque sollicitudin sodales odio ac pharetra. Quisque auctor erat ut finibus rhoncus. In gravida malesuada lacus, id finibus urna consectetur a."
-}, {
-  title: "Day 3",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat ante ut massa pretium, at suscipit nibh sodales. Duis sed lacinia lacus, in pulvinar ante. Etiam facilisis semper semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse velit mauris, imperdiet eget nunc a, lobortis luctus massa. Proin nec augue vel orci sollicitudin gravida. Quisque felis ligula, suscipit at tellus at, porttitor dictum libero. Quisque sollicitudin sodales odio ac pharetra. Quisque auctor erat ut finibus rhoncus. In gravida malesuada lacus, id finibus urna consectetur a."
-}, {
-  title: "Day 4",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat ante ut massa pretium, at suscipit nibh sodales. Duis sed lacinia lacus, in pulvinar ante. Etiam facilisis semper semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse velit mauris, imperdiet eget nunc a, lobortis luctus massa. Proin nec augue vel orci sollicitudin gravida. Quisque felis ligula, suscipit at tellus at, porttitor dictum libero. Quisque sollicitudin sodales odio ac pharetra. Quisque auctor erat ut finibus rhoncus. In gravida malesuada lacus, id finibus urna consectetur a."
-}];
+const pageItems = [];
 
 app.use(bodyParser.urlencoded({
   extended: true
