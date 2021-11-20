@@ -26,10 +26,8 @@ p {
 }
 
 .header {
-  padding: 2rem 10rem;
+  padding: 2rem 9rem;
   background: #FFF3E4;
-  display: flex;
-  align-items: center;
 }
 
 .header-title h3 {
@@ -39,18 +37,14 @@ p {
   font-family: 'Dancing Script', cursive;
 }
 
-.item-container {
-  margin-top: 10px;
-}
-
-.navbar-item-element {
-  letter-spacing: 2px;
-  padding: 0 15px;
-  text-decoration: none;
+.navbar-nav .nav-item .nav-link {
+  letter-spacing: 3px;
+  padding: 0 6px;
   color: #483434;
+  margin: 5px 0;
 }
 
-.navbar-item-element:hover {
+.navbar-nav .nav-item .nav-link:hover {
   color: #EED6C4;
 }
 
@@ -74,4 +68,14 @@ p {
 .content-holder a:hover{
   color: purple;
   text-decoration: underline;
+}
+
+input, textarea{
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+textarea[name="content"]{
+  width: 100%;
 }
