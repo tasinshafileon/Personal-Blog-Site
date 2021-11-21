@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const app = express();
+const _ = require('lodash');
 
 const homeStartingContent = "Hello! I am Tasin Shafi Leon. This is my Daily Journal blogpost where I try to record my daily activities or random productive and creative thoughts. I hope my blogpost will reflect my thought process and ideologies. I also thank you for taking your time to come and read my blogposts to learn and know about me more.";
 
@@ -52,7 +53,21 @@ app.get("/compose", function(req, res) {
   });
 });
 
-app.post("/compose", function(req, res){
+app.get("/posts/:blog", function(req, res) {
+
+
+  pageItems.forEach(function(item) {
+      if (_.lowerCase(item.title) === _.lowerCase(req.params.blog)) {
+        res.render("posts", {
+          pageTitle: item.title,
+          startingTitle: item.title,
+          startingContent: item.content
+        });
+      };
+  });
+});
+
+app.post("/compose", function(req, res) {
   pageItems.push({
     title: req.body.title,
     content: req.body.content
