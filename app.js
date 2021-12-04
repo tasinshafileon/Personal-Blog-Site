@@ -1,8 +1,18 @@
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-const app = express();
 const _ = require('lodash');
+const mongoose = require('mongoose');
+require('dotenv').config()
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(express.static("public"));
+app.set("view engine", "ejs")
+
+mongoose.connect('mongodb+srv://' + process.env.USER_NAME + ':' + process.env.USER_PASSWORD + '@cluster0.ai3n9.mongodb.net/personal-blog');
 
 const homeStartingContent = "Hello! I am Tasin Shafi Leon. This is my Daily Journal blogpost where I try to record my daily activities or random productive and creative thoughts. I hope my blogpost will reflect my thought process and ideologies. I also thank you for taking your time to come and read my blogposts to learn and know about me more.";
 
@@ -10,22 +20,23 @@ const aboutStartingContent = "Greetings! I am Tasin Shafi Leon, a developer who 
 
 const contactStartingContent = "Hey there! In order to contact me you can mail me at ";
 
-const pageItems = [];
+const itemSchema = {
+  title: "String",
+  content: "String"
+}
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
-
-app.use(express.static("public"));
-
-app.set("view engine", "ejs")
+const Item = mongoose.model("item", itemSchema);
 
 app.get("/", function(req, res) {
-  res.render("index", {
-    pageTitle: "Home",
-    startingTitle: "Home",
-    items: pageItems,
-    startingContent: homeStartingContent
+  Item.find({}, function(err, found) {
+    if (!err) {
+      res.render("index", {
+        pageTitle: "Home",
+        startingTitle: "Home",
+        items: found,
+        startingContent: homeStartingContent
+      });
+    }
   });
 });
 
@@ -54,24 +65,28 @@ app.get("/compose", function(req, res) {
 });
 
 app.get("/posts/:blog", function(req, res) {
-
-
-  pageItems.forEach(function(item) {
-      if (_.lowerCase(item.title) === _.lowerCase(req.params.blog)) {
-        res.render("posts", {
-          pageTitle: item.title,
-          startingTitle: item.title,
-          startingContent: item.content
-        });
-      };
+  Item.find({}, function(err, found) {
+    if (!err) {
+      found.forEach(function(item) {
+        if (_.lowerCase(item.title) === _.lowerCase(req.params.blog)) {
+          res.render("posts", {
+            pageTitle: item.title,
+            startingTitle: item.title,
+            startingContent: item.content
+          });
+        };
+      });
+    }
   });
 });
 
 app.post("/compose", function(req, res) {
-  pageItems.push({
+
+  const newItem = new Item({
     title: req.body.title,
     content: req.body.content
   });
+  newItem.save();
   res.redirect("/");
 });
 
