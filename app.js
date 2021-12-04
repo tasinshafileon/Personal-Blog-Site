@@ -68,7 +68,7 @@ app.get("/posts/:blog", function(req, res) {
   Item.find({}, function(err, found) {
     if (!err) {
       found.forEach(function(item) {
-        if (_.lowerCase(item.title) === _.lowerCase(req.params.blog)) {
+        if (_.lowerCase(item._id) === _.lowerCase(req.params.blog)) {
           res.render("posts", {
             pageTitle: item.title,
             startingTitle: item.title,

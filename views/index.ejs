@@ -6,7 +6,7 @@
     <% for(var i=items.length-1; i>=0; i--) { %>
     <h1><%=items[i].title%></h1>
     <p><%=(items[i].content).slice(0,100)%>...</p>
-    <a href="/posts/<%=items[i].title%>">read more</a>
+    <a href="/posts/<%=items[i]._id%>">read more</a>
     <% } %>
   </div>
 
